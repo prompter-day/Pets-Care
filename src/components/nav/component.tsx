@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments, faMap, faUser } from '@fortawesome/free-solid-svg-icons'
 import styles from './nav.module.css'
+import { useState } from 'react'
 
 export default function Nav () {
-  
+  const [select, setSelect] = useState<Number>(0)
 
   return (
     <nav className={styles.nav}>
