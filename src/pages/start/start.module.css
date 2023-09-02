@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup {
+  max-width: 500px;
+  width: 70vw;
+  position: fixed;
+}
+
+.btn {
+  margin-top: 90vh;
+  width: 90vw;
+  height: 60px;
+  border-radius: 20px;
+  background: rgb(79, 158, 255);
+  outline: none;
+  border: none;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}

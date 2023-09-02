@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,4 +14,11 @@
 
 html, body {
   margin: 0;
+}
+
+.overlay {
+  background: white;
+  padding: 12px;
+  border: solid rgb(221, 221, 221) 1px;
+  border-radius: 20px;
 }

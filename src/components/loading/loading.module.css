@@ -1,0 +1,62 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 60;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation: FadeOut;
+  animation-duration: .5s;
+  animation-delay: 1.7s;
+}
+
+.logo {
+  max-width: 200px;
+  width: 50vw;
+  margin-bottom: 20px;
+}
+
+.progress {
+  width: 80vw;
+  max-width: 200px;
+  height: 8px;
+  border-radius: 20px;
+  background: rgb(236, 236, 236);
+
+  display: flex;
+  justify-content: flex-start;
+}
+.bar {
+  background: rgb(0, 102, 255);
+  border-radius: 20px;
+
+  animation: ProgressBar;
+  animation-duration: 1.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+/* ==== Animation ==== */
+
+@keyframes FadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ProgressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

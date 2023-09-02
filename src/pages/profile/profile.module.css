@@ -1,0 +1,49 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.avatar {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 25px;
+  color: #2C8BFF;
+}
+.username {
+  font-weight: 400;
+  font-size: 15px;
+  color: gray;
+}
+.email {
+  font-weight: 400;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 50px;
+}
+
+.likes {
+  width: 60vw;
+  max-width: 500px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.svg {
+  width: 20px;
+}
