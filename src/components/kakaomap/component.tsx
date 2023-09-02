@@ -29,7 +29,7 @@ const KakaoMap = (props: any) => {
   }
 
   const getMarkerInfo = async (el: any) => {
-    const data = (await axios.get(`https://dapi.kakao.com/v2/local/search/keyword.json?query=${el.place_name}`, {
+    const data = (await axios.get(`/v2/local/search/keyword.json?query=${el.place_name}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'KakaoAK 7223e9f0251766089825605f73a1584a'

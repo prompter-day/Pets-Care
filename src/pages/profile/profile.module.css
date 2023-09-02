@@ -33,17 +33,50 @@
 }
 
 .likes {
-  width: 60vw;
-  max-width: 500px;
+  width: 75vw;
+  max-width: 800px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .text {
   font-weight: bold;
   font-size: 18px;
-  margin-right: 10px;
 }
-.svg {
-  width: 20px;
+.heart {
+  height: 20px;
+  margin-right: 6px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.card {
+  width: 75vw;
+  max-width: 800px;
+  border: solid 1px rgb(206, 206, 206);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 10px;
+}
+
+.c_name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2C8BFF;
+  margin-bottom: 8px; 
+}
+.c_address {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3992ff;
 }
