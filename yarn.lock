@@ -956,6 +956,11 @@ kakao-sdk@^3.1.0:
   resolved "https://registry.yarnpkg.com/kakao-sdk/-/kakao-sdk-3.1.0.tgz#0fd5cf2be39fb0de57254225d187de88266f3e65"
   integrity sha512-hXKbmZX+QyuGzN+wsoslQqQYRHxehxz3CvcXwCBCePwMQkDNezHgFrn3AQOSYjyOBvhwciqqE88rAk664Ql2rw==
 
+kakao.maps.d.ts@^0.1.38:
+  version "0.1.38"
+  resolved "https://registry.yarnpkg.com/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.38.tgz#aee5fca5dadaa6196fde774419d2d48e232aafcf"
+  integrity sha512-ub3ITsp/XfM7OikRvnsQiK6oZgyqVKVvGm9bmChudfDRjFa6xrS2O/bLNs0EyFCQZufVBXLLJK9+T06LOYxNiw==
+
 keyv@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.3.tgz#00873d2b046df737963157bd04f294ca818c9c25"
