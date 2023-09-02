@@ -10,6 +10,7 @@ import Profile from "../profile/page"
 
 export default function Mainpage () {
   const navigate = useNavigate()
+  const [id, setId] = useState(0)
   const [select, setSelect] = useState<Number>(0)
 
   const verify = async () => {
@@ -20,8 +21,9 @@ export default function Mainpage () {
     }
     }).then(resp => {
       const res = resp.data
-
       if (!res.success) navigate('/login')
+
+      setId(res.result.id)
     })
   }
 
@@ -31,7 +33,7 @@ export default function Mainpage () {
 
   return (
     <div className={styles.main}>
-      { select == 0 ? <Chat /> : ( select == 1 ? <Map /> : <Profile /> ) }
+      { select == 0 ? <Chat /> : ( select == 1 ? <Map id={id} /> : <Profile id={id} /> ) }
 
       <nav className={select == 1 ? styles.rnav : styles.nav}>
         <div className={select == 1 ? styles.rmenu : styles.menu} onClick={() => setSelect(0)}>

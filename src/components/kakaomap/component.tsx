@@ -3,16 +3,45 @@ import styles from './kakaomap.module.css'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPersonWalking, faArrowsLeftRight, faCar, faCrosshairs } from '@fortawesome/free-solid-svg-icons'
+import { getLocation } from '../../utils/get_location'
 import HMarker from '../../assets/imgs/hmarker.png'
 import Bocchi from '../../assets/imgs/bocchi.png'
-import { getLocation } from '../../utils/get_location'
+import StarFill from '../../assets/imgs/star-fill.png'
+import StarDef from '../../assets/imgs/star-default.png'
 
-const KakaoMap = (props: any) => {
+const KakaoMap = (props: { id: number, coords: any }) => {
   const [map, setMap] = useState(null as any)
   const [selected, setSelected] = useState(false)
   const [selectedMarker, setSelectedMarker] = useState({} as any)
   const [kakaoInfo, setKakaoInfo] = useState({} as any)
   const [selectedDist, setSelectedDist] = useState({ distance: 0, walking: 0, car: 0 })
+  const [isLiked, setIsLiked] = useState(false)
+  
+  const token = sessionStorage.getItem('TOKEN')
+
+  const isLike = async (latitude: number, longitude: number) => {
+    axios.post('/api/hosp/find', { id: props.id, latitude, longitude }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(resp => {
+      const res = resp.data
+      if (res.success) setIsLiked(true)
+    })
+  }
+
+  const addLikes = async (latitude: number, longitude: number, name: string) => {
+    axios.post('/api/hosp/add', { id: props.id, latitude, longitude, name }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(resp => {
+      const res = resp.data
+      if (res.success) setIsLiked(true)
+    })
+  }
 
   const deg2rad = (deg: number) => {
     return deg * (Math.PI / 180)
@@ -43,7 +72,6 @@ const KakaoMap = (props: any) => {
       car: Number((Number((getDistance(Number(props.coords.latitude), Number(props.coords.longitude), Number(el.y), Number(el.x)) * 1000).toFixed(0)) / 6.3 / 60).toFixed(0))
     })
     setSelectedMarker(data.documents[0])
-    setSelected(true)
   }
 
   const getLocationData = async () => {
@@ -85,6 +113,8 @@ const KakaoMap = (props: any) => {
       })
 
       kakao.maps.event.addListener(marker, 'click', () => {
+        isLike(el.y, el.x)
+        setSelected(true)
         setKakaoInfo(el)
         getMarkerInfo(el)
       })
@@ -97,13 +127,18 @@ const KakaoMap = (props: any) => {
 
   useEffect(() => {
     getLocationData()
-  },[])
+  }, [])
 
     return (
       <Fragment>
         <div className={ selected ? styles.aniwindow : styles.unaniwindow }>
           <div className={styles.contain}>
             <div className={styles.bar} />
+
+            <div className={styles.starcontain}>
+              <img src={isLiked ? StarFill : StarDef} className={styles.star} onClick={() => addLikes(selectedMarker.y, selectedMarker.x, selectedMarker.place_name)} /> 
+            </div>
+
             <div className={styles.name}>{ selectedMarker.place_name }</div>
             <div className={styles.address}>{ selectedMarker.address_name }</div>
             

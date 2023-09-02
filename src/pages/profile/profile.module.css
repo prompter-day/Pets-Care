@@ -93,3 +93,7 @@
   color: rgb(255, 96, 96);
   opacity: .8;
 }
+
+.hidden {
+  display: none;
+}
