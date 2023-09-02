@@ -1,9 +1,10 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import styles from './chat.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default  function Chat () {
+  
   return (
     <Fragment>
       <div className={styles.container}>

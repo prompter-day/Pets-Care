@@ -15,7 +15,7 @@ export default function Map () {
 
   useEffect(() => {
     setTimeout(() => setLoad(false), 2000)
-  })
+  }, [])
 
   return (
     <Fragment>

@@ -4,6 +4,8 @@ import styles from './profile.module.css'
 
 import Default from '../../assets/imgs/default.png'
 import Heart from '../../assets/imgs/heart.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 export default function Profile () {
   const [addresses, setAddresses] = useState<string[]>([])
@@ -18,6 +20,10 @@ export default function Profile () {
     )).data
 
     setAddresses([ ...addresses, data.documents[0].address.address_name ])
+  }
+
+  const removeLike = async () => {
+
   }
 
   useEffect(() => {
@@ -35,12 +41,18 @@ export default function Profile () {
       <div className={styles.likes}>
         <img src={Heart} className={styles.heart} />
         <div className={styles.text}>좋아요 누른 병원</div>
+        <div className={styles.text}>(1/10)</div>
       </div>
 
       <div className={styles.cards}>
         <div className={styles.card}>
-          <div className={styles.c_name}>도리원동물병원</div>
-          <div className={styles.c_address}>{ addresses[0] }</div>
+          <div className={styles.cardtext}>
+            <div className={styles.c_name}>도리원동물병원</div>
+            <div className={styles.c_address}>{ addresses[0] }</div>
+          </div>
+          <div className={styles.cardicon}>
+            <FontAwesomeIcon icon={faTrashCan} className={styles.c_iconbtn} onClick={() => removeLike()} />
+          </div>
         </div>
       </div>
     </div>
