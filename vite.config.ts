@@ -23,6 +23,12 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
         ws: true
+      },
+      '/gpt': {
+        target: 'http://54.180.126.168:5003',
+        changeOrigin: true,
+        secure: false,
+        ws: true
       }
     }
   }

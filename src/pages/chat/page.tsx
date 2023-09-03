@@ -17,7 +17,7 @@ export default function Chat () {
     _chat = chat
     _chat.push(question)
 
-    axios.post('http://54.180.126.168:5003/gpt', { language: 'en', prompt: question }, {
+    axios.post('/gpt', { language: 'en', prompt: question }, {
       headers: { 'Content-Type': 'application/json' }
     }).then(resp => {
       setChat([..._chat, `#${resp.data.answer}`])
