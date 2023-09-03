@@ -56,10 +56,10 @@
   background: rgba(255, 255, 255, 0.585);
   backdrop-filter: blur(20px);
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  margin-top: 70%;
+  margin-top: 15%;
 }
 .unaniwindow {
   animation: topToBottom;
@@ -80,7 +80,7 @@
   height: 70vh;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  margin-top: 70%;
+  margin-top: 15%;
 }
 
 .bar {
@@ -175,5 +175,52 @@
   }
   to {
     transform: translateY(160%);
+  }
+}
+
+
+
+@media screen and (max-width: 700px) {
+  .aniwindow {
+    animation: bottomToTop;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  
+    position: fixed;
+    overflow-y: auto;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.585);
+    backdrop-filter: blur(20px);
+    width: 100vw;
+    height: 100vh;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 60%;
+  }
+  .unaniwindow {
+    animation: topToBottom;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  
+    position: fixed;
+    overflow-y: auto;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.585);
+    backdrop-filter: blur(20px);
+    width: 100vw;
+    height: 70vh;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 60%;
   }
 }
