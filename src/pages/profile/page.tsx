@@ -52,6 +52,7 @@ export default function Profile (props: { id: number }) {
       }
     }).then(resp => {
       console.log(resp)
+      window.location.href = '/main'
     })
   }
 
