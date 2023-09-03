@@ -13,13 +13,13 @@ export default defineConfig({
         ws: true
       },
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://3.35.8.33:3000',
         changeOrigin: true,
         secure: false,
         ws: true
       },
       '/upload': {
-        target: 'http://localhost:3000',
+        target: 'http://3.35.8.33:3000',
         changeOrigin: true,
         secure: false,
         ws: true
