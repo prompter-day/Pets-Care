@@ -9,6 +9,7 @@ export default function Signup () {
   const navigate = useNavigate()
   const [user, setUser] = useState({
     email: '',
+    name: '',
     password: ''
   })
 
@@ -23,10 +24,6 @@ export default function Signup () {
     }).catch(console.error)
   }
 
-  useEffect(() => {
-    // if (sessionStorage.getItem('TOKEN')) navigate('/')
-  }, [])
-
   return (
     <Fragment>
     <Link to={'/'}><FontAwesomeIcon icon={faArrowLeft} className={styles.previous} /></Link>
@@ -37,6 +34,7 @@ export default function Signup () {
 
       <div className={styles.form}>
         <input type="text" className={styles.input} placeholder='email' onChange={(e: ChangeEvent<HTMLInputElement>) => setUser({ ...user, email: e.target.value })} />
+        <input type="text" className={styles.input} placeholder='name' onChange={(e: ChangeEvent<HTMLInputElement>) => setUser({ ...user, name: e.target.value })} />
         <input type="password" className={styles.input} placeholder='password' onChange={(e: ChangeEvent<HTMLInputElement>) => setUser({ ...user, password: e.target.value })} />
         <input type="password" className={styles.input} placeholder='password again' />
 
