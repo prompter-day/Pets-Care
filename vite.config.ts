@@ -18,7 +18,7 @@ export default defineConfig({
         secure: false,
         ws: true
       },
-      '/upload': {
+      '/uploads': {
         target: 'http://3.35.8.33:3000',
         changeOrigin: true,
         secure: false,
